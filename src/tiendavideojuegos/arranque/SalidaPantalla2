@@ -1,0 +1,84 @@
+===============================================
+PRUEBAS DE LA ITERACIÓN 2 - ESCENARIOS DE ÉXITO
+===============================================
+
+Termino el alquiler que el usuario 'edugom' tiene sobre la copia '11111111-2'
+La terminación del alquiler ha concluido con multa
+
+Termino el alquiler que el usuario 'edugom' tiene sobre la copia '11111111-2'
+La terminación del alquiler ha concluido sin multa
+
+Listo los alquileres del usuario 'edugom'
+El socio Eduardo Gómez Sánchez alquila el videojuego 44444444B: 'Minecraft' para PlayStation 3 desde 10-may-2016 durante 2 días (VIGENTE)
+El socio Eduardo Gómez Sánchez alquila el videojuego 33333333: 'Dragon Ball: Raging Blast' para XBox 360 desde 10-may-2016 durante 2 días (VIGENTE)
+El socio Eduardo Gómez Sánchez alquila el videojuego 11111111: 'Pro Evolution Soccer 2015' para XBox One desde 10-may-2016 durante 2 días (TERMINADO)
+El socio Eduardo Gómez Sánchez alquila el videojuego 44444444A: 'Minecraft' para Wii U desde 10-may-2016 durante 4 días (TERMINADO)
+
+Aplico las políticas de premio
+
+Listo los movimientos de la tarjeta del socio con identificador 'edugom' para ver si ha tenido premios
+50,00 euros, por 'Ingreso en efectivo por el usuario edugom', con fecha 10-may-2016
+-6,00 euros, por 'Alquiler de 11111111: 'Pro Evolution Soccer 2015' para XBox One por 2 días', con fecha 10-may-2016
+-8,00 euros, por 'Alquiler de 44444444A: 'Minecraft' para Wii U por 4 días', con fecha 10-may-2016
+-10,00 euros, por 'Alquiler de 33333333: 'Dragon Ball: Raging Blast' para XBox 360 por 2 días', con fecha 10-may-2016
+-4,00 euros, por 'Alquiler de 44444444B: 'Minecraft' para PlayStation 3 por 2 días', con fecha 10-may-2016
+-6,00 euros, por 'Multa en el aqluier de 11111111: 'Pro Evolution Soccer 2015' para XBox One por 1 días de exceso', con fecha 10-may-2016
+10,00 euros, por 'Premio por más de 3 alquileres en un mes', con fecha 10-may-2016
+
+Listo los movimientos de la tarjeta del socio con identificador 'mperez' para ver si ha tenido premios
+5,00 euros, por 'Ingreso en efectivo por el usuario mperez', con fecha 10-may-2016
+-4,00 euros, por 'Alquiler de 44444444A: 'Minecraft' para Wii U por 2 días', con fecha 10-may-2016
+===============================================
+PRUEBAS DE LA ITERACIÓN 1 - ESCENARIOS DE FALLO
+===============================================
+
+Se intenta crear una descripción con un identificador que ya existe
+Ha fallado una operación sobre el videojuego con identificador '11111111', por la siguiente causa: YA_EXISTE_DESCRIPCION
+
+Se intenta mostrar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta modificar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta eliminar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta crear una copia de una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta mostrar una copia de una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta mostrar una copia que no existe de una descripción que sí existe
+Ha fallado una operación sobre el videojuego con identificador '22222222', por la siguiente causa: NO_EXISTE_COPIA (copia 22222222-1)
+
+El usuario 'nadie' va a intentar alquilar
+Ha fallado una operación sobre un alquiler del usuario 'nadie' para la copia '11111111-1', por la siguiente causa: SOCIO_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '99999999-1' de un videojuego que no existe
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '99999999-1', por la siguiente causa: COPIA_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '11111111-9', que no existe
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '11111111-9', por la siguiente causa: COPIA_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '44444444A-2', que ya está alquilada
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '44444444A-2', por la siguiente causa: COPIA_NO_DISPONIBLE
+
+El usuario 'edugom' va a alquilar la copia '33333333-1' durante 10 días, para lo que no tiene saldo suficiente
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '33333333-1', por la siguiente causa: COPIA_NO_DISPONIBLE
+===============================================
+PRUEBAS DE LA ITERACIÓN 2 - ESCENARIOS DE FALLO
+===============================================
+
+Intento terminar un alquiler ya terminado
+Ha fallado una operación sobre un alquiler del usuario '(desconocido)' para la copia '11111111-2', por la siguiente causa: ALQUILER_NO_EXISTE
+
+Intento terminar un alquiler de una copia que no existe
+Ha fallado una operación sobre un alquiler del usuario '(desconocido)' para la copia '99999999-1', por la siguiente causa: ALQUILER_NO_EXISTE
+
+Intento terminar un alquiler dando lugar a una multa que no se puede pagar (trucando al sistema para que piense que llevo un día de retraso)
+Ha fallado una operación sobre un alquiler del usuario 'mperez' para la copia '44444444A-2', por la siguiente causa: SOCIO_SIN_SALDO_PARA_MULTA
+
+Listo los alquileres de un usuario que no existe
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE

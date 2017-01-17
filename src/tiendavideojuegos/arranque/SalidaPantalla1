@@ -1,0 +1,103 @@
+===============================================
+PRUEBAS DE LA ITERACIÓN 1 - ESCENARIOS DE ÉXITO
+===============================================
+
+Creo seis descripciones de videojuegos
+
+Listo las descripciones de videojuego existentes
+11111111: 'Pro Evolution Soccer 2015' para XBox One
+00000000: 'God of War 3' para PlayStation 3
+33333333: 'Dragon Ball: Raging Blast' para XBox 360
+44444444A: 'Minecraft' para Wii U
+44444444B: 'Minecraft' para PlayStation 3
+22222222: 'Gran Turismo' para PlayStation
+
+Muestro los datos completos de la descripción de videojuego con identificador '00000000'
+Identificador: 00000000
+Título: God of War 3
+Creador: SCE Santa Monica Studio
+Consola: PlayStation 3
+Género: AVENTURA
+Edad mínima: 18
+Precio diario: 50.0
+Copias totales: 0
+Copias disponibles: 0
+
+Modifico el género y el precio de la descripción de videojuego con identificador '00000000'
+
+Muestro de nuevo los datos completos de la descripción de videojuego con identificador '00000000'
+Identificador: 00000000
+Título: God of War 3
+Creador: SCE Santa Monica Studio
+Consola: PlayStation 3
+Género: ACCION
+Edad mínima: 18
+Precio diario: 5.0
+Copias totales: 0
+Copias disponibles: 0
+
+Elimino la descripción de videojuego con identificador '00000000'
+
+Listo de nuevo las descripciones de videojuego existentes
+11111111: 'Pro Evolution Soccer 2015' para XBox One
+33333333: 'Dragon Ball: Raging Blast' para XBox 360
+44444444A: 'Minecraft' para Wii U
+44444444B: 'Minecraft' para PlayStation 3
+22222222: 'Gran Turismo' para PlayStation
+
+Creo algunas copias de videojuegos
+
+Listo las copias de videojuego existentes para la descripción con identificador '44444444A'
+Copia 44444444A-1 en estado DISPONIBLE
+Copia 44444444A-2 en estado DISPONIBLE
+Copia 44444444A-3 en estado DISPONIBLE
+
+Muestro los datos de la copia de videojuego con identificador '44444444A-1'
+Copia 44444444A-1 en estado DISPONIBLE
+
+El usuario 'edugom' va a alquilar las copias '11111111-2' y '44444444A-1' durante 2 días
+
+La usuaria 'mperez' va a alquilar la copia '44444444A-2' durante 4 días
+
+Listo los alquileres del usuario 'edugom'
+El socio Eduardo Gómez Sánchez alquila el videojuego 11111111: 'Pro Evolution Soccer 2015' para XBox One desde 26-abr-2016 durante 2 días (VIGENTE)
+El socio Eduardo Gómez Sánchez alquila el videojuego 44444444A: 'Minecraft' para Wii U desde 26-abr-2016 durante 2 días (VIGENTE)
+===============================================
+PRUEBAS DE LA ITERACIÓN 1 - ESCENARIOS DE FALLO
+===============================================
+
+Se intenta crear una descripción con un identificador que ya existe
+Ha fallado una operación sobre el videojuego con identificador '11111111', por la siguiente causa: YA_EXISTE_DESCRIPCION
+
+Se intenta mostrar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta modificar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta eliminar una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta crear una copia de una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta mostrar una copia de una descripción que no existe
+Ha fallado una operación sobre el videojuego con identificador '00000000', por la siguiente causa: NO_EXISTE_DESCRIPCION
+
+Se intenta mostrar una copia que no existe de una descripción que sí existe
+Ha fallado una operación sobre el videojuego con identificador '22222222', por la siguiente causa: NO_EXISTE_COPIA (copia 22222222-1)
+
+El usuario 'nadie' va a intentar alquilar
+Ha fallado una operación sobre un alquiler del usuario 'nadie' para la copia '11111111-1', por la siguiente causa: SOCIO_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '99999999-1' de un videojuego que no existe
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '99999999-1', por la siguiente causa: COPIA_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '11111111-9', que no existe
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '11111111-9', por la siguiente causa: COPIA_NO_EXISTE
+
+El usuario 'edugom' va a alquilar la copia '44444444A-2', que ya está alquilada
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '44444444A-2', por la siguiente causa: COPIA_NO_DISPONIBLE
+
+El usuario 'edugom' va a alquilar la copia '33333333-1' durante 10 días, para lo que no tiene saldo suficiente
+Ha fallado una operación sobre un alquiler del usuario 'edugom' para la copia '33333333-1', por la siguiente causa: SOCIO_SIN_SALDO_PARA_ALQUILER

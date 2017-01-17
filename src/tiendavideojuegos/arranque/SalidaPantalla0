@@ -1,0 +1,72 @@
+===============================================
+PRUEBAS DE LA ITERACIÓN 0 - ESCENARIOS DE ÉXITO
+===============================================
+
+Creo tres socios, con identificadores 'edugom', 'mperez' y 'nadie'
+
+Listo los socios
+nadie: Ninguna Persona
+edugom: Eduardo Gómez Sánchez
+mperez: María Pérez Juárez
+
+Muestro los datos completos del socio con identificador 'mperez'
+Usuario: mperez
+Clave: suclave
+Nombre: María
+Apellidos: Pérez Juárez
+Fecha de nacimiento: 02-ene-2002
+NIF: 11111111B
+Número de móvil: 000000000
+Dirección de correo: mperez@tel.uva.es
+Método de mensajería: CORREO
+
+Modifico el nombre y el teléfono del socio con identificador 'mperez'
+
+Vuelvo a mostrar los datos completos del socio con identificador 'mperez', para comprobar la modificación
+Usuario: mperez
+Clave: suclave
+Nombre: María Ángeles
+Apellidos: Pérez Juárez
+Fecha de nacimiento: 02-ene-2002
+NIF: 11111111B
+Número de móvil: 666777777
+Dirección de correo: mperez@tel.uva.es
+Método de mensajería: CORREO
+
+Elimino al socio con identificador 'nadie'
+
+Listo los socios de nuevo, para comprobar la eliminación
+edugom: Eduardo Gómez Sánchez
+mperez: María Ángeles Pérez Juárez
+
+Ingreso diversas cantidades en las tarjetas de los usuarios
+
+Listo los movimientos de la tarjeta del socio con identificador 'edugom'
+50,00 euros, por 'Ingreso en efectivo por el usuario edugom', con fecha 03-mar-2016
+
+Muestro el saldo de la tarjeta del socio con identificador 'edugom'
+Saldo:50,00
+===============================================
+PRUEBAS DE LA ITERACIÓN 0 - ESCENARIOS DE FALLO
+===============================================
+
+Intento crear un socio con identificador 'edugom'
+Ha fallado una operación sobre el usuario con identificador 'edugom', por la siguiente causa: YA_EXISTE
+
+Intento mostrar los datos del socio identificador 'nadie'
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE
+
+Intento modificar los datos del socio identificador 'nadie'
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE
+
+Intento eliminar al socio con identificador 'nadie'
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE
+
+Intento ingresar una cantidad al socio con identificador 'nadie'
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE
+
+Intento ingresar 200 euros al socio con identificador 'edugom'
+Ha fallado una operación sobre al realizar un movimiento con concepto 'Ingreso en efectivo por el usuario edugom', por la siguiente causa: SALDO_EXCESIVO
+
+Intento listar los movimientos de la tarjeta del socio con identificador 'nadie'
+Ha fallado una operación sobre el usuario con identificador 'nadie', por la siguiente causa: NO_EXISTE
